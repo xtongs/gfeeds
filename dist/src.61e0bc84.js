@@ -77,7 +77,7 @@ parcelRequire = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({24:[function(require,module,exports) {
+})({31:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -110,7 +110,7 @@ const EXPANDO = exports.EXPANDO = '_hyper: ';
 const SHOULD_USE_TEXT_CONTENT = exports.SHOULD_USE_TEXT_CONTENT = /^style|textarea$/i;
 const UID = exports.UID = EXPANDO + (Math.random() * new Date() | 0) + ';';
 const UIDC = exports.UIDC = '<!--' + UID + '-->';
-},{}],25:[function(require,module,exports) {
+},{}],32:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -187,7 +187,7 @@ const isArray = exports.isArray = Array.isArray || (toString => arr => toString.
 const trim = exports.trim = _constants.UID.trim || function () {
   return this.replace(/^\s+|\s+$/g, '');
 };
-},{"./constants.js":24}],10:[function(require,module,exports) {
+},{"./constants.js":31}],17:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -286,7 +286,7 @@ const lazyGetter = (type, fn) => {
     }
   };
 };
-},{"../shared/constants.js":24,"../shared/poorlyfills.js":25}],11:[function(require,module,exports) {
+},{"../shared/constants.js":31,"../shared/poorlyfills.js":32}],18:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -323,7 +323,7 @@ exports.default = {
     }
   }
 };
-},{}],26:[function(require,module,exports) {
+},{}],33:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -334,7 +334,7 @@ const create = exports.create = (node, type) => doc(node).createElement(type);
 const doc = exports.doc = node => node.ownerDocument || node;
 const fragment = exports.fragment = node => doc(node).createDocumentFragment();
 const text = exports.text = (node, text) => doc(node).createTextNode(text);
-},{}],30:[function(require,module,exports) {
+},{}],37:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -356,7 +356,7 @@ const selfClosing = new RegExp(tagName + attrName + attrPartials + '*)([ ' + spa
 exports.attrName = attrName;
 exports.attrSeeker = attrSeeker;
 exports.selfClosing = selfClosing;
-},{}],38:[function(require,module,exports) {
+},{}],45:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -384,7 +384,7 @@ const hasDoomedCloneNode = exports.hasDoomedCloneNode = testFragment.cloneNode(t
 // but native implementations need importNode instead
 // (specially Chromium and its old V0 implementation)
 const hasImportNode = exports.hasImportNode = 'importNode' in document;
-},{"./easy-dom.js":26}],27:[function(require,module,exports) {
+},{"./easy-dom.js":33}],34:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -529,7 +529,7 @@ const SVGFragment = _featuresDetection.hasContent ? (node, html) => {
   append(content, slice.call(container.firstChild.childNodes));
   return content;
 };
-},{"./re.js":30,"./constants.js":24,"./features-detection.js":38,"./easy-dom.js":26}],28:[function(require,module,exports) {
+},{"./re.js":37,"./constants.js":31,"./features-detection.js":45,"./easy-dom.js":33}],35:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -569,7 +569,7 @@ Wire.prototype.remove = function remove() {
   }
   return first;
 };
-},{"../shared/utils.js":27,"../shared/easy-dom.js":26}],39:[function(require,module,exports) {
+},{"../shared/utils.js":34,"../shared/easy-dom.js":33}],46:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -625,7 +625,7 @@ exports.default = {
     return node;
   }
 };
-},{"../shared/constants.js":24}],40:[function(require,module,exports) {
+},{"../shared/constants.js":31}],47:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -700,7 +700,7 @@ const toStyle = object => {
   }
   return css.join('');
 };
-},{}],14:[function(require,module,exports) {
+},{}],21:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -798,7 +798,7 @@ beforeNode // optional item/node to use as insertBefore delimiter
 };
 
 exports.default = domdiff;
-},{}],29:[function(require,module,exports) {
+},{}],36:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1275,7 +1275,7 @@ function observe() {
     }, false);
   }
 }
-},{"../shared/constants.js":24,"../classes/Component.js":10,"../classes/Wire.js":28,"./Path.js":39,"./Style.js":40,"./Intent.js":11,"../shared/domdiff.js":14,"../shared/easy-dom.js":26,"../shared/poorlyfills.js":25,"../shared/utils.js":27}],13:[function(require,module,exports) {
+},{"../shared/constants.js":31,"../classes/Component.js":17,"../classes/Wire.js":35,"./Path.js":46,"./Style.js":47,"./Intent.js":18,"../shared/domdiff.js":21,"../shared/easy-dom.js":33,"../shared/poorlyfills.js":32,"../shared/utils.js":34}],20:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1364,7 +1364,7 @@ const SC_PLACE = ($0, $1, $2) => {
 };
 
 exports.default = render;
-},{"../shared/poorlyfills.js":25,"../shared/constants.js":24,"../objects/Updates.js":29,"../shared/utils.js":27,"../shared/re.js":30}],12:[function(require,module,exports) {
+},{"../shared/poorlyfills.js":32,"../shared/constants.js":31,"../objects/Updates.js":36,"../shared/utils.js":34,"../shared/re.js":37}],19:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1473,7 +1473,7 @@ const wireContent = node => {
 exports.content = content;
 exports.weakly = weakly;
 exports.default = wire;
-},{"../shared/constants.js":24,"../shared/poorlyfills.js":25,"../shared/easy-dom.js":26,"../shared/utils.js":27,"../classes/Wire.js":28,"./render.js":13}],6:[function(require,module,exports) {
+},{"../shared/constants.js":31,"../shared/poorlyfills.js":32,"../shared/easy-dom.js":33,"../shared/utils.js":34,"../classes/Wire.js":35,"./render.js":20}],11:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1539,7 +1539,7 @@ exports.wire = _wire2.default;
 function hyper(HTML) {
   return arguments.length < 2 ? HTML == null ? (0, _wire.content)('html') : typeof HTML === 'string' ? hyper.wire(null, HTML) : 'raw' in HTML ? (0, _wire.content)('html')(HTML) : 'nodeType' in HTML ? hyper.bind(HTML) : (0, _wire.weakly)(HTML, 'html') : ('raw' in HTML ? (0, _wire.content)('html') : hyper.wire).apply(null, arguments);
 }
-},{"./classes/Component.js":10,"./objects/Intent.js":11,"./hyper/wire.js":12,"./hyper/render.js":13,"./shared/domdiff.js":14}],20:[function(require,module,exports) {
+},{"./classes/Component.js":17,"./objects/Intent.js":18,"./hyper/wire.js":19,"./hyper/render.js":20,"./shared/domdiff.js":21}],27:[function(require,module,exports) {
 "use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -1579,7 +1579,7 @@ var ClientError = /** @class */ (function (_super) {
 }(Error));
 exports.ClientError = ClientError;
 //# sourceMappingURL=types.js.map
-},{}],22:[function(require,module,exports) {
+},{}],29:[function(require,module,exports) {
 (function(self) {
 
   if (self.fetch) {
@@ -2041,7 +2041,7 @@ exports.ClientError = ClientError;
   self.fetch.polyfill = true;
 })(typeof self !== 'undefined' ? self : this);
 
-},{}],7:[function(require,module,exports) {
+},{}],12:[function(require,module,exports) {
 "use strict";
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -2218,7 +2218,7 @@ function getResult(response) {
     });
 }
 //# sourceMappingURL=index.js.map
-},{"./types":20,"cross-fetch/polyfill":22}],4:[function(require,module,exports) {
+},{"./types":27,"cross-fetch/polyfill":29}],6:[function(require,module,exports) {
 'use strict';
 
 var _templateObject = _taggedTemplateLiteral(['', ''], ['', '']),
@@ -2238,7 +2238,7 @@ var query = '{\n  Movie(title: "Inception") {\n    releaseDate\n    actors {\n  
     return (0, _hyperhtml.wire)()(_templateObject2, actor.name);
   }));
 });
-},{"hyperhtml":6,"graphql-request":7}],41:[function(require,module,exports) {
+},{"hyperhtml":11,"graphql-request":12}],48:[function(require,module,exports) {
 
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -2268,7 +2268,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '50712' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '55455' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -2407,5 +2407,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[41,4])
+},{}]},{},[48,6])
 //# sourceMappingURL=/src.61e0bc84.map
