@@ -1,0 +1,25 @@
+{
+  "name": "gfeeds",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "graphql-request": "^1.5.1",
+    "hyperhtml": "^2.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "parcel src/index.html -p 7000",
+    "build": "parcel build src/index.html -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xtongs/gfeeds.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xtongs/gfeeds/issues"
+  },
+  "homepage": "https://github.com/xtongs/gfeeds#readme"
+}
