@@ -10,7 +10,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "parcel src/index.html -p 7000",
-    "build": "parcel build src/index.html -d . --public-url gfeeds"
+    "build": "parcel build src/index.html -d . --public-url ."
   },
   "repository": {
     "type": "git",
