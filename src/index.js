@@ -1,21 +1,37 @@
 import { bind, wire } from 'hyperhtml'
-import { request } from 'graphql-request'
+import { query } from './request'
+import index from './index.gql'
 
-const query = `{
-  Movie(title: "Inception") {
-    releaseDate
-    actors {
-      name
-    }
-  }
-}`
+let list = []
+let loading = false
 
-request('https://api.graph.cool/simple/v1/movies', query).then(data => {
-  const actors = data.Movie && data.Movie.actors
-  bind(document.body) `${
-    actors.map(
-      actor =>
-        wire() `<li>${actor.name}</li>`
-      )
-  }`
-})
+function timeFormatter(string) {
+  let date = new Date(string)
+  return date.toLocaleDateString() + ' ' + date.toLocaleTimeString()
+}
+
+function getList() {
+  loading = true
+  render()
+  query(index, list[list.length - 1]).then(data => {
+    const newList = data.reddit && data.reddit.subreddit && data.reddit.subreddit.newListings || []
+    list = [...list, ...newList]
+    loading = false
+    render()
+  })
+}
+
+function render() {
+  bind(document.body.querySelector('.yue')) `${
+    list.map(
+      li =>
+        wire() `<li>
+          <a href="${li.url}">${li.title}</a>
+          <p><small><em>Score: ${li.score}</em> - ${li.author.username} - ${timeFormatter(li.author.createdISO)}</small></p>
+        </li>`
+    )}
+    ${loading ? 'Loading...' : wire() `<a href="javascript:;" onclick=${getList}>Load More</a>`}
+  `
+}
+
+getList()

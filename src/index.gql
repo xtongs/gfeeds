@@ -1,0 +1,16 @@
+query getList($after: String) {
+  reddit {
+    subreddit(name: "graphql"){
+      newListings(after: $after, limit: 10) {
+        fullnameId
+        title
+        url
+        score
+        author {
+          username
+          createdISO
+        }
+      }
+    }
+  }
+}
